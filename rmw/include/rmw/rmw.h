@@ -2175,7 +2175,7 @@ rmw_compare_gids_equal(const rmw_gid_t * gid1, const rmw_gid_t * gid2, bool * re
  *
  * \pre Given `node` must be a valid node, as returned by rmw_create_node().
  * \pre Given `client` must be a valid client, as returned by rmw_create_client().
- * \pre Given `node` must be the one the `publisher` was registered with.
+ * \pre Given `node` must be the one the `client` was registered with.
  *
  * \param[in] node Node to query the ROS graph.
  * \param[in] client Service client to look for matching service servers.
