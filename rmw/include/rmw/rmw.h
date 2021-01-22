@@ -2804,10 +2804,10 @@ RMW_PUBLIC
 RMW_WARN_UNUSED
 rmw_ret_t
 rmw_subscription_set_listener_callback(
-  const void * user_data,
+  rmw_subscription_t * rmw_subscription,
   rmw_listener_cb_t listener_callback,
-  const void * subscription_handle,
-  rmw_subscription_t * rmw_subscription);
+  const void * user_data,
+  const void * subscription_handle);
 
 /// Set callback function of the rmw service listener.
 /**
@@ -2825,10 +2825,10 @@ RMW_PUBLIC
 RMW_WARN_UNUSED
 rmw_ret_t
 rmw_service_set_listener_callback(
-  const void * user_data,
+  rmw_service_t * rmw_service,
   rmw_listener_cb_t listener_callback,
-  const void * service_handle,
-  rmw_service_t * rmw_service);
+  const void * user_data,
+  const void * service_handle);
 
 /// Set callback function of the rmw client listener.
 /**
@@ -2846,10 +2846,10 @@ RMW_PUBLIC
 RMW_WARN_UNUSED
 rmw_ret_t
 rmw_client_set_listener_callback(
-  const void * user_data,
+  rmw_client_t * rmw_client,
   rmw_listener_cb_t listener_callback,
-  const void * client_handle,
-  rmw_client_t * rmw_client);
+  const void * user_data,
+  const void * client_handle);
 
 /// Set callback function of the rmw guard condition listener.
 /**
@@ -2869,10 +2869,10 @@ RMW_PUBLIC
 RMW_WARN_UNUSED
 rmw_ret_t
 rmw_guard_condition_set_listener_callback(
-  const void * user_data,
-  rmw_listener_cb_t listener_callback,
-  const void * guard_condition_handle,
   rmw_guard_condition_t * rmw_guard_condition,
+  rmw_listener_cb_t listener_callback,
+  const void * user_data,
+  const void * guard_condition_handle,
   bool use_previous_events);
 
 /// Set callback function of the rmw event listener.
@@ -2893,10 +2893,10 @@ RMW_PUBLIC
 RMW_WARN_UNUSED
 rmw_ret_t
 rmw_event_set_listener_callback(
-  const void * user_data,
-  rmw_listener_cb_t listener_callback,
-  const void * event_handle,
   rmw_event_t * rmw_event,
+  rmw_listener_cb_t listener_callback,
+  const void * user_data,
+  const void * event_handle,
   bool use_previous_events);
 
 #ifdef __cplusplus
