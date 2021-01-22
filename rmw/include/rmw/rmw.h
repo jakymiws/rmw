@@ -2790,8 +2790,10 @@ rmw_set_log_severity(rmw_log_severity_t severity);
 
 /// Set callback function of the rmw subscription listener.
 /**
- * This function sets the callback function which will be called whenever the
+ * This API sets the callback function which will be called whenever the
  * subscription listener is notified about a new message for the subscription.
+ * The callback will be called from background thread(s) that the rmw
+ * implementation uses to wait (listen) for events to happen.
  *
  * \param[in] user_data Used as arg for the call of the listener_callback
  * \param[in] listener_callback The callback to be called by the listener
@@ -2811,8 +2813,10 @@ rmw_subscription_set_listener_callback(
 
 /// Set callback function of the rmw service listener.
 /**
- * This function sets the callback function which will be called whenever the
+ * This API sets the callback function which will be called whenever the
  * service listener is notified about a service ready.
+ * The callback will be called from background thread(s) that the rmw
+ * implementation uses to wait (listen) for events to happen.
  *
  * \param[in] user_data Used as arg for the call of the listener_callback
  * \param[in] listener_callback The callback to be called by the listener
@@ -2832,8 +2836,10 @@ rmw_service_set_listener_callback(
 
 /// Set callback function of the rmw client listener.
 /**
- * This function sets the callback function which will be called whenever the
+ * This API sets the callback function which will be called whenever the
  * client listener is notified about a new client request.
+ * The callback will be called from background thread(s) that the rmw
+ * implementation uses to wait (listen) for events to happen.
  *
  * \param[in] user_data Used as arg for the call of the listener_callback
  * \param[in] listener_callback The callback to be called by the listener
@@ -2853,8 +2859,10 @@ rmw_client_set_listener_callback(
 
 /// Set callback function of the rmw guard condition listener.
 /**
- * This function sets the callback function which will be called whenever the
+ * This API sets the callback function which will be called whenever the
  * guard condition listener is notified about the guard condition being triggered.
+ * The callback will be called from background thread(s) that the rmw
+ * implementation uses to wait (listen) for events to happen.
  *
  * \param[in] user_data Used as arg for the call of the listener_callback
  * \param[in] listener_callback The callback to be called by the listener
@@ -2877,8 +2885,10 @@ rmw_guard_condition_set_listener_callback(
 
 /// Set callback function of the rmw event listener.
 /**
- * This function sets the callback function which will be called whenever the
- * subscription listener is notified about a new message for the subscription.
+ * This API sets the callback function which will be called whenever the
+ * event listener is notified about a new event, like a QoS change.
+ * The callback will be called from background thread(s) that the rmw
+ * implementation uses to wait (listen) for events to happen.
  *
  * \param[in] user_data Used as arg for the call of the listener_callback
  * \param[in] listener_callback The callback to be called by the listener
