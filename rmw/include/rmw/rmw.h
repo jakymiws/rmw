@@ -2792,8 +2792,10 @@ rmw_set_log_severity(rmw_log_severity_t severity);
 /**
  * This API sets the callback function which will be called whenever the
  * subscription listener is notified about a new message for the subscription.
- * The callback will be called from background thread(s) that the rmw
- * implementation uses to wait (listen) for events to happen.
+ * The callback may be called from a thread that the rmw implementation
+ * created, rather than a thread owned by the user, i.e. some thread other
+ * than user owned threads calling rmw functions such as rmw_wait() or
+ * rmw_publish().
  *
  * \param[in] user_data Used as arg for the call of the listener_callback
  * \param[in] listener_callback The callback to be called by the listener
@@ -2807,7 +2809,7 @@ RMW_WARN_UNUSED
 rmw_ret_t
 rmw_subscription_set_listener_callback(
   rmw_subscription_t * rmw_subscription,
-  rmw_listener_cb_t listener_callback,
+  rmw_listener_callback_t listener_callback,
   const void * user_data,
   const void * subscription_handle);
 
@@ -2830,7 +2832,7 @@ RMW_WARN_UNUSED
 rmw_ret_t
 rmw_service_set_listener_callback(
   rmw_service_t * rmw_service,
-  rmw_listener_cb_t listener_callback,
+  rmw_listener_callback_t listener_callback,
   const void * user_data,
   const void * service_handle);
 
@@ -2853,7 +2855,7 @@ RMW_WARN_UNUSED
 rmw_ret_t
 rmw_client_set_listener_callback(
   rmw_client_t * rmw_client,
-  rmw_listener_cb_t listener_callback,
+  rmw_listener_callback_t listener_callback,
   const void * user_data,
   const void * client_handle);
 
@@ -2878,7 +2880,7 @@ RMW_WARN_UNUSED
 rmw_ret_t
 rmw_guard_condition_set_listener_callback(
   rmw_guard_condition_t * rmw_guard_condition,
-  rmw_listener_cb_t listener_callback,
+  rmw_listener_callback_t listener_callback,
   const void * user_data,
   const void * guard_condition_handle,
   bool use_previous_events);
@@ -2904,7 +2906,7 @@ RMW_WARN_UNUSED
 rmw_ret_t
 rmw_event_set_listener_callback(
   rmw_event_t * rmw_event,
-  rmw_listener_cb_t listener_callback,
+  rmw_listener_callback_t listener_callback,
   const void * user_data,
   const void * event_handle,
   bool use_previous_events);
