@@ -36,7 +36,7 @@ struct rmw_listener_event_t {
 
 typedef struct rmw_listener_event_t rmw_listener_event_t;
 
-typedef void (*rmw_listener_callback_t)(const void * user_data, rmw_listener_event_t event);
+typedef void (*rmw_listener_callback_t)(void * user_data, rmw_listener_event_t event);
 
 
 #ifdef __cplusplus
