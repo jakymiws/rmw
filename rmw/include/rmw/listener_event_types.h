@@ -20,24 +20,7 @@ extern "C"
 {
 #endif
 
-enum rmw_listener_event_type_t {
-    SUBSCRIPTION_EVENT,
-    SERVICE_EVENT,
-    CLIENT_EVENT,
-    WAITABLE_EVENT
-};
-
-typedef enum rmw_listener_event_type_t rmw_listener_event_type_t;
-
-struct rmw_listener_event_t {
-  const void * entity;
-  rmw_listener_event_type_t type;
-};
-
-typedef struct rmw_listener_event_t rmw_listener_event_t;
-
-typedef void (*rmw_listener_callback_t)(void * user_data, rmw_listener_event_t event);
-
+typedef void (* rmw_listener_callback_t)(const void * user_data);
 
 #ifdef __cplusplus
 }

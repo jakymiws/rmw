@@ -2797,10 +2797,9 @@ rmw_set_log_severity(rmw_log_severity_t severity);
  * than user owned threads calling rmw functions such as rmw_wait() or
  * rmw_publish().
  *
- * \param[in] user_data Used as arg for the call of the listener_callback
- * \param[in] listener_callback The callback to be called by the listener
- * \param[in] subscription_handle Used as arg for the call of the listener_callback
  * \param[in] rmw_subscription The rmw subscription to which the listener belongs
+ * \param[in] listener_callback The callback to be called by the listener
+ * \param[in] user_data Used as arg for the call of the listener_callback
  * \return `RMW_RET_OK` if callback was set to the listener, or
  * \return `RMW_RET_UNSUPPORTED` if the API is not implemented in the dds implementation
  */
@@ -2810,8 +2809,7 @@ rmw_ret_t
 rmw_subscription_set_listener_callback(
   rmw_subscription_t * rmw_subscription,
   rmw_listener_callback_t listener_callback,
-  void * user_data,
-  const void * subscription_handle);
+  const void * user_data);
 
 /// Set callback function of the rmw service listener.
 /**
@@ -2822,10 +2820,9 @@ rmw_subscription_set_listener_callback(
  * than user owned threads calling rmw functions such as rmw_wait() or
  * rmw_publish().
  *
- * \param[in] user_data Used as arg for the call of the listener_callback
- * \param[in] listener_callback The callback to be called by the listener
- * \param[in] service_handle Used as arg for the call of the listener_callback
  * \param[in] rmw_service The rmw service to which the listener belongs
+ * \param[in] listener_callback The callback to be called by the listener
+ * \param[in] user_data Used as arg for the call of the listener_callback
  * \return `RMW_RET_OK` if callback was set to the listener, or
  * \return `RMW_RET_UNSUPPORTED` if the API is not implemented in the dds implementation
  */
@@ -2835,8 +2832,7 @@ rmw_ret_t
 rmw_service_set_listener_callback(
   rmw_service_t * rmw_service,
   rmw_listener_callback_t listener_callback,
-  void * user_data,
-  const void * service_handle);
+  const void * user_data);
 
 /// Set callback function of the rmw client listener.
 /**
@@ -2847,10 +2843,9 @@ rmw_service_set_listener_callback(
  * than user owned threads calling rmw functions such as rmw_wait() or
  * rmw_publish().
  *
- * \param[in] user_data Used as arg for the call of the listener_callback
- * \param[in] listener_callback The callback to be called by the listener
- * \param[in] client_handle Used as arg for the call of the listener_callback
  * \param[in] rmw_client The rmw client to which the listener belongs
+ * \param[in] listener_callback The callback to be called by the listener
+ * \param[in] user_data Used as arg for the call of the listener_callback
  * \return `RMW_RET_OK` if callback was set to the listener, or
  * \return `RMW_RET_UNSUPPORTED` if the API is not implemented in the dds implementation
  */
@@ -2860,8 +2855,7 @@ rmw_ret_t
 rmw_client_set_listener_callback(
   rmw_client_t * rmw_client,
   rmw_listener_callback_t listener_callback,
-  void * user_data,
-  const void * client_handle);
+  const void * user_data);
 
 /// Set callback function of the rmw guard condition listener.
 /**
@@ -2872,10 +2866,9 @@ rmw_client_set_listener_callback(
  * than user owned threads calling rmw functions such as rmw_wait() or
  * rmw_publish().
  *
- * \param[in] user_data Used as arg for the call of the listener_callback
- * \param[in] listener_callback The callback to be called by the listener
- * \param[in] guard_condition_handle Used as arg for the call of the listener_callback
  * \param[in] rmw_guard_condition The rmw guard condition to which the listener belongs
+ * \param[in] listener_callback The callback to be called by the listener
+ * \param[in] user_data Used as arg for the call of the listener_callback
  * \param[in] use_previous_events Boolean flag to indicate if events happened before the
  *   set of the listener callback should be taken into account or ignored
  * \return `RMW_RET_OK` if callback was set to the listener, or
@@ -2887,8 +2880,7 @@ rmw_ret_t
 rmw_guard_condition_set_listener_callback(
   rmw_guard_condition_t * rmw_guard_condition,
   rmw_listener_callback_t listener_callback,
-  void * user_data,
-  const void * guard_condition_handle,
+  const void * user_data,
   bool use_previous_events);
 
 /// Set callback function of the rmw event listener.
@@ -2900,10 +2892,9 @@ rmw_guard_condition_set_listener_callback(
  * than user owned threads calling rmw functions such as rmw_wait() or
  * rmw_publish().
  *
- * \param[in] user_data Used as arg for the call of the listener_callback
- * \param[in] listener_callback The callback to be called by the listener
- * \param[in] event_handle Used as arg for the call of the listener_callback
  * \param[in] rmw_event The rmw event to which the listener belongs
+ * \param[in] listener_callback The callback to be called by the listener
+ * \param[in] user_data Used as arg for the call of the listener_callback
  * \param[in] use_previous_events Boolean flag to indicate if events happened before the
  *   set of the listener callback should be taken into account or ignored
  * \return `RMW_RET_OK` if callback was set to the listener, or
@@ -2915,8 +2906,7 @@ rmw_ret_t
 rmw_event_set_listener_callback(
   rmw_event_t * rmw_event,
   rmw_listener_callback_t listener_callback,
-  void * user_data,
-  const void * event_handle,
+  const void * user_data,
   bool use_previous_events);
 
 #ifdef __cplusplus
