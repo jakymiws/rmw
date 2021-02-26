@@ -12,8 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#ifndef RMW__LISTENER_EVENT_TYPES_H_
-#define RMW__LISTENER_EVENT_TYPES_H_
+#ifndef RMW__LISTENER_CALLBACK_TYPE_H_
+#define RMW__LISTENER_CALLBACK_TYPE_H_
 
 #ifdef __cplusplus
 extern "C"
@@ -26,4 +26,4 @@ typedef void (* rmw_listener_callback_t)(const void * user_data);
 }
 #endif
 
-#endif  // RMW__LISTENER_EVENT_TYPES_H_
+#endif  // RMW__LISTENER_CALLBACK_TYPE_H_
