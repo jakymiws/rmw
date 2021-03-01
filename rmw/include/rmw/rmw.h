@@ -96,7 +96,7 @@ extern "C"
 #include "rosidl_runtime_c/sequence_bound.h"
 
 #include "rmw/init.h"
-#include "rmw/listener_event_types.h"
+#include "rmw/listener_callback_type.h"
 #include "rmw/macros.h"
 #include "rmw/message_sequence.h"
 #include "rmw/qos_profiles.h"
