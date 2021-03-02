@@ -225,6 +225,13 @@ typedef enum rmw_event_type_t
   RMW_EVENT_INVALID
 } rmw_event_type_t;
 
+/// Define publisher/subscription event types
+typedef enum rmw_event_data_type_t
+{
+  RMW_SUBSCRIBER_EVENT,
+  RMW_PUBLISHER_EVENT
+} rmw_event_data_type_t;
+
 /// Encapsulate the RMW event implementation, data, and type.
 typedef struct RMW_PUBLIC_TYPE rmw_event_t
 {
@@ -234,6 +241,7 @@ typedef struct RMW_PUBLIC_TYPE rmw_event_t
   void * data;
   /// The event type that occurred.
   rmw_event_type_t event_type;
+  rmw_event_data_type_t event_data_type;
 } rmw_event_t;
 
 /// Allocation of memory for an rmw publisher
