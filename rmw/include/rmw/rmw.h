@@ -3202,6 +3202,11 @@ rmw_event_set_callback(
   rmw_event_callback_t callback,
   const void * user_data);
 
+RMW_PUBLIC
+RMW_WARN_UNUSED
+rmw_ret_t
+rmw_notify_participant_dynamic_network_interface(rmw_node_t * node);
+
 #ifdef __cplusplus
 }
 #endif
