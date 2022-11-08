@@ -3205,7 +3205,7 @@ rmw_event_set_callback(
 RMW_PUBLIC
 RMW_WARN_UNUSED
 rmw_ret_t
-rmw_notify_participant_dynamic_network_interface(rmw_node_t * node);
+rmw_notify_participant_dynamic_network_interface(rmw_context_t * context);
 
 #ifdef __cplusplus
 }
